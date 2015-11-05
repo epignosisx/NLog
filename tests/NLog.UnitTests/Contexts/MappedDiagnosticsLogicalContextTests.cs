@@ -38,7 +38,7 @@ namespace NLog.UnitTests.Contexts
     using System.Threading.Tasks;
     using Xunit;
 
-    public class MappedDiagnosticsLogicalContextTests
+    public class MappedDiagnosticsLogicalContextTests : NLogTestBase
     {
         public MappedDiagnosticsLogicalContextTests()
         {
