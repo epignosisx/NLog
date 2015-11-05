@@ -45,7 +45,7 @@ namespace NLog.UnitTests
     using Microsoft.CSharp;
     using Xunit;
 
-    public class ConfigFileLocatorTests
+    public class ConfigFileLocatorTests : NLogTestBase
     {
         private string appConfigContents = @"
 <configuration>
