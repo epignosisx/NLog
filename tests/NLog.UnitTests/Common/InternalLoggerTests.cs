@@ -217,6 +217,8 @@ namespace NLog.UnitTests.Common
             InternalLogger.Log(LogLevel.Info, "III");
 
             Assert.True(consoleOutWriter2.ToString() == expected);
+
+            InternalLogger.LogToConsole = false;
         }
 
         [Fact]

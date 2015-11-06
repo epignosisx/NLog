@@ -96,6 +96,7 @@ namespace NLog.UnitTests.Targets
             }
             
             LogManager.Configuration = null;
+            InternalLogger.LogToConsole = false;
         }
 
         private void DoConcurrentTest(int numProcesses, int numLogs, string mode)

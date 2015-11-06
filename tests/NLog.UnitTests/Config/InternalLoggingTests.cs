@@ -75,6 +75,7 @@ namespace NLog.UnitTests.Config
                 Assert.True(InternalLogger.LogToConsoleError);
                 Assert.Same(LogLevel.Fatal, LogManager.GlobalThreshold);
                 Assert.True(LogManager.ThrowExceptions);
+                InternalLogger.LogToConsole = false;
             }
         }
     }

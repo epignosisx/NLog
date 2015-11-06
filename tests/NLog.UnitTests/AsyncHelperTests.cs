@@ -479,6 +479,7 @@ namespace NLog.UnitTests
                 Assert.NotNull(lastException);
                 Assert.IsType(typeof(InvalidOperationException), lastException);
                 Assert.Equal("Some failure.", lastException.Message);
+                InternalLogger.LogToConsole = false;
             }
         }
 
