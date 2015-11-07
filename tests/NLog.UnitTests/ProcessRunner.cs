@@ -80,7 +80,7 @@ class C1
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex);
+            Output.WriteLine(ex);
             return 1;
         }
     }

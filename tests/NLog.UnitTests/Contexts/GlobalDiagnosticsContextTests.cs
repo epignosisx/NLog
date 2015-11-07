@@ -31,6 +31,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+using Xunit.Abstractions;
+
 #pragma warning disable 0618
 
 namespace NLog.UnitTests.Contexts
@@ -39,6 +41,10 @@ namespace NLog.UnitTests.Contexts
 
     public class GlobalDiagnosticsContextTests : NLogTestBase
     {
+        public GlobalDiagnosticsContextTests(ITestOutputHelper output) : base(output)
+        {
+        }
+
         [Fact]
         public void GDCTest1()
         {

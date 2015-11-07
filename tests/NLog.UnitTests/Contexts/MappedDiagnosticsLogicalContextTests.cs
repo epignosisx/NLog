@@ -31,6 +31,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+using Xunit.Abstractions;
+
 namespace NLog.UnitTests.Contexts
 {
     using System;
@@ -40,7 +42,7 @@ namespace NLog.UnitTests.Contexts
 
     public class MappedDiagnosticsLogicalContextTests : NLogTestBase
     {
-        public MappedDiagnosticsLogicalContextTests()
+        public MappedDiagnosticsLogicalContextTests(ITestOutputHelper output) : base(output)
         {
             MappedDiagnosticsLogicalContext.Clear();
         }

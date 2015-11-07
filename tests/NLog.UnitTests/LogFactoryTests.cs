@@ -31,6 +31,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+using Xunit.Abstractions;
+
 #if !SILVERLIGHT
 namespace NLog.UnitTests
 {
@@ -46,6 +48,10 @@ namespace NLog.UnitTests
 
     public class LogFactoryTests : NLogTestBase
     {
+        public LogFactoryTests(ITestOutputHelper output) : base(output)
+        {
+        }
+
         [Fact]
         public void Flush_DoNotThrowExceptionsAndTimeout_DoesNotThrow()
         {

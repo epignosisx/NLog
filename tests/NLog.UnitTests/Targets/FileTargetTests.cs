@@ -31,6 +31,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+using Xunit.Abstractions;
+
 #if !SILVERLIGHT
 
 namespace NLog.UnitTests.Targets
@@ -55,6 +57,10 @@ namespace NLog.UnitTests.Targets
     public class FileTargetTests : NLogTestBase
     {
         private readonly ILogger logger = LogManager.GetLogger("NLog.UnitTests.Targets.FileTargetTests");
+
+        public FileTargetTests(ITestOutputHelper output) : base(output)
+        {
+        }
 
         private void GenerateArchives(int count, string archiveDateFormat, string archiveFileName,
             ArchiveNumberingMode archiveNumbering)

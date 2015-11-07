@@ -32,6 +32,7 @@
 // 
 
 using System.Threading;
+using Xunit.Abstractions;
 
 #if !SILVERLIGHT
 
@@ -104,7 +105,7 @@ namespace NLog.UnitTests
         private string missingConfigOutput = "--BEGIN--|--END--|";
         private readonly string _tempDirectory;
 
-        public ConfigFileLocatorTests()
+        public ConfigFileLocatorTests(ITestOutputHelper output) : base(output)
         {
             _tempDirectory = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(_tempDirectory);
@@ -221,14 +222,14 @@ class C1
 
     static void Main(string[] args)
     {
-        Console.WriteLine(""--BEGIN--"");
+        Output.WriteLine(""--BEGIN--"");
         logger.Trace(""TraceMsg"");
         logger.Debug(""DebugMsg"");
         logger.Info(""InfoMsg"");
         logger.Warn(""WarnMsg"");
         logger.Error(""ErrorMsg"");
         logger.Fatal(""FatalMsg"");
-        Console.WriteLine(""--END--"");
+        Output.WriteLine(""--END--"");
     }
 }";
             var provider = new CSharpCodeProvider();

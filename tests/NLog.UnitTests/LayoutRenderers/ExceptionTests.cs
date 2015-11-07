@@ -31,6 +31,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+using Xunit.Abstractions;
+
 namespace NLog.UnitTests.LayoutRenderers
 {
     using System;
@@ -45,6 +47,10 @@ namespace NLog.UnitTests.LayoutRenderers
     {
         private ILogger logger = LogManager.GetLogger("NLog.UnitTests.LayoutRenderer.ExceptionTests");
         private const string ExceptionDataFormat = "{0}: {1}";
+
+        public ExceptionTests(ITestOutputHelper output) : base(output)
+        {
+        }
 
         [Fact]
         public void ExceptionWithStackTrace_ObsoleteMethodTest()

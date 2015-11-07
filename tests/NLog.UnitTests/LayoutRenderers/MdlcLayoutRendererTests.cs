@@ -31,6 +31,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+using Xunit.Abstractions;
+
 namespace NLog.UnitTests.LayoutRenderers
 {
 #if NET4_0 || NET4_5
@@ -44,7 +46,7 @@ namespace NLog.UnitTests.LayoutRenderers
     {
         private static DebugTarget _target;
 
-        public MdlcLayoutRendererTests()
+        public MdlcLayoutRendererTests(ITestOutputHelper output) : base(output)
         {
             ConfigurationItemFactory.Default.LayoutRenderers.RegisterDefinition("mdlc", typeof(MdlcLayoutRenderer));
 

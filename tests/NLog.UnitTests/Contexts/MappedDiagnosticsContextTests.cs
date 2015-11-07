@@ -32,6 +32,7 @@
 // 
 
 using System.Text;
+using Xunit.Abstractions;
 
 #pragma warning disable 0618
 
@@ -44,6 +45,10 @@ namespace NLog.UnitTests.Contexts
 
     public class MappedDiagnosticsContextTests : NLogTestBase
     {
+        public MappedDiagnosticsContextTests(ITestOutputHelper output) : base(output)
+        {
+        }
+
         /// <summary>
         /// Same as <see cref="MappedDiagnosticsContext" />, but there is one <see cref="MappedDiagnosticsContext"/> per each thread.
         /// </summary>
